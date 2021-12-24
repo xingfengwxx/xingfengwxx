@@ -15,4 +15,5 @@ Here are some ideas to get you started:
 -->
 [![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=xingfengwxx)](https://github.com/xingfengwxx/github-readme-stats)
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact)](https://github.com/xingfengwxx/github-readme-stats)
-[![In 2021, I made 112 contributions and modified 32,000 lines of code.](https://www.githubtrends.io/wrapped/xingfengwxx)
+
+In 2021, I made 112 contributions and modified 32,000 lines of code. Check out my GitHub Wrapped and create your own at githubtrends.io/wrapped/xingfengwxx
