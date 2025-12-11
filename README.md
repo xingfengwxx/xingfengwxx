@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Xingfeng</h1>
+<h1 align="center">Hi 👋, I'm WangXingxing</h1>
 <h3 align="center">Android Senior Engineer | Kotlin | Jetpack Compose | MVVM | Clean Architecture</h3>
 
 ---
@@ -11,7 +11,7 @@
 - 🌱 正在学习：**Java 后端、Spring Boot、服务端 API 设计**
 - 📱 计划上架多个 Google Play 工具类 App（AdMob 变现）
 - 💬 欢迎就 Android / Compose / Kotlin / 架构向我提问
-- 📫 联系我：**1099420259@qq.com**
+- 📫 联系我：**1099420259@qq.com**或**xingfengwxx@gmail.com**
 
 ---
 
