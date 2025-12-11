@@ -47,24 +47,20 @@
 ---
 
 ## 📊 GitHub 数据统计
+![GitHub Stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical)
+![Top Langs](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical)
 
 ---
 
 ## 🔥 GitHub Streak（连击统计）
-
-![GitHub Streak](https://streak-stats.demolab.com?user=xingfengwxx&theme=radical&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=xingfengwxx&theme=radical)
 
 ---
 
 ## 🧩 活跃图（贪吃蛇动画）
-
-> 若你已配置 workflow，自动更新。如果未配置，我可以帮你生成。
-
 ![GitHub Snake Animation](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/snake.svg)
+
 
 ---
 
