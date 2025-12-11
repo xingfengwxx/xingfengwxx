@@ -58,7 +58,7 @@
 
 ---
 
-## 🧩 活跃图（贪吃蛇动画）
+## 🧩 活跃图
 ![GitHub Snake Animation](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/snake.svg)
 
 
