@@ -37,12 +37,15 @@
 ---
 
 ## 🚀 热门项目
+| 项目 | 技术栈 / 描述 |
+|------|---------------|
+| **[WanAndroidCompose](https://github.com/xingfengwxx/WanAndroidCompose)** | 基于 **Jetpack Compose + Kotlin + MVVM + 协程 Flow** 的 WanAndroid 客户端，展示 Compose 在真实业务中的完整落地实践 |
+| **[VideoCollectionsCompose](https://github.com/xingfengwxx/VideoCollectionsCompose)** | 使用 **Jetpack Compose** 构建的视频合集类应用，涵盖列表、播放、状态管理等 Compose 核心能力 |
+| **[BeautyFaceDemo](https://github.com/xingfengwxx/BeautyFaceDemo)** | 基于 **OpenGL + OpenCV + 人脸关键点** 的人脸美颜示例（美颜、大眼、贴纸），涉及图像处理与底层渲染 |
+| **[MyFFmpegPlayer](https://github.com/xingfengwxx/MyFFmpegPlayer)** | 基于 **FFmpeg** 实现的本地视频与 **RTMP 流媒体播放**，展示音视频解码与播放流程 |
+| **[FlowPractice](https://github.com/xingfengwxx/FlowPractice)** | **Kotlin 协程 Flow** 实战项目，涵盖 StateFlow / SharedFlow 及在 Android 架构中的使用方式 |
+| **[GSYDemo](https://github.com/xingfengwxx/GSYDemo)** | Android GSYVideoPlayer 在 TV 端的视频播放适配示例 |
 
-| 项目 | 描述 |
-|------|------|
-| 🔐 **Secure Butler（密管家）** | 一个安全的账号密码管理工具（Android + Compose） |
-| ⚙️ **Android 工具集 App** | 多功能系统工具，计划上架 Google Play |
-| 🧩 **Jetpack Compose 组件化架构模板** | 企业级 Compose + MVVM + Hilt 多模块架构示例 |
 
 ---
 
