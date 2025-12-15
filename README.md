@@ -54,7 +54,8 @@
 ---
 
 ## 🔥 GitHub Streak（连击统计）
-![GitHub Streak](https://streak-stats.demolab.com?user=xingfengwxx&theme=radical&hide_border=true)
+![GitHub Stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical&include_all_commits=true&count_private=true)
+
 
 
 ---
