@@ -1,5 +1,5 @@
 <h1 align="center">你好 👋，我是王星星</h1>
-<h3 align="center">资深 Android 工程师｜11 年原生开发经验｜Kotlin · Jetpack Compose · MVP · MVVM · MVI · Clean Architecture</h3>
+<h3 align="center">资深 Android 工程师｜11 年原生开发经验｜Kotlin · Jetpack Compose · MVVM · MVI · Clean Architecture</h3>
 
 ---
 
