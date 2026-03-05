@@ -20,12 +20,12 @@
   
   <circle cx="26" cy="69" r="5" fill="#58A6FF"/>
   <text x="40" y="74" class="label">N/A</text>
-  <text x="245" y="74" class="value" text-anchor="end">100.0%</text>
+    <text x="276" y="84" class="value" dominant-baseline="middle">100.0%</text>
 
   
   <rect x="40" y="81" width="220" height="6" rx="3" fill="#1F2937"/>
   <rect x="40" y="81" width="220" height="6" rx="3" fill="#58A6FF"/>
 
 
-  <text x="24" y="238" class="meta">Updated: 2026-03-05 06:48 UTC</text>
+  <text x="24" y="238" class="meta">Updated: 2026-03-05 06:59 UTC</text>
 </svg>

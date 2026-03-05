@@ -135,6 +135,9 @@ def build_svg(username: str, lang_totals: dict[str, int], top_n: int = 6) -> str
 
     base_y = 74
     row_h = 28
+    bar_x = 40
+    bar_w = 220
+    pct_x = bar_x + bar_w + 16
 
     for idx, (lang, size) in enumerate(top_langs):
         y = base_y + idx * row_h
@@ -145,16 +148,16 @@ def build_svg(username: str, lang_totals: dict[str, int], top_n: int = 6) -> str
             f'''
   <circle cx="26" cy="{y - 5}" r="5" fill="{color}"/>
   <text x="40" y="{y}" class="label">{_svg_escape(lang)}</text>
-  <text x="245" y="{y}" class="value" text-anchor="end">{pct:.1f}%</text>
+    <text x="{pct_x}" y="{y + 10}" class="value" dominant-baseline="middle">{pct:.1f}%</text>
 '''
         )
 
-        bar_width = max(2, int(220 * pct / 100))
+        bar_width = max(2, int(bar_w * pct / 100))
         bar_y = y + 7
         bars_svg.append(
             f'''
-  <rect x="40" y="{bar_y}" width="220" height="6" rx="3" fill="#1F2937"/>
-  <rect x="40" y="{bar_y}" width="{bar_width}" height="6" rx="3" fill="{color}"/>
+  <rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="6" rx="3" fill="#1F2937"/>
+  <rect x="{bar_x}" y="{bar_y}" width="{bar_width}" height="6" rx="3" fill="{color}"/>
 '''
         )
 
