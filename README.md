@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm WangXingxing</h1>
+<h1 align="center">你好 👋，我是王星星</h1>
 <h3 align="center">Android Senior Engineer | Kotlin | Jetpack Compose | MVVM | Clean Architecture</h3>
 
 ---
@@ -8,6 +8,7 @@
 - 🔭 目前主要从事 **Android 原生开发（10 年经验）**
 - 🧱 技术方向包括：**Kotlin / Compose / MVVM / 协程 Flow / Jetpack / Hilt / Retrofit / Room**
 - 🚀 关注领域：**架构设计、组件化、多模块化、性能优化、工具类产品开发**
+- 🤖 熟练掌握 **AI 工具协作开发**（如 GitHub Copilot / ChatGPT / Cursor / OpenClaw等），可用于需求拆解、代码生成、重构与效率优化
 - 🌱 正在学习：**Java 后端、Spring Boot、服务端 API 设计**
 - 📱 计划上架多个 Google Play 工具类 App（AdMob 变现）
 - 💬 欢迎就 Android / Compose / Kotlin / 架构向我提问
