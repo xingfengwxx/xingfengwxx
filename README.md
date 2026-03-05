@@ -50,7 +50,7 @@
 ---
 
 ## 📊 GitHub 数据统计
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical&cache_seconds=1800)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=xingfengwxx&show_icons=true)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical&cache_seconds=1800)
 
 ---
