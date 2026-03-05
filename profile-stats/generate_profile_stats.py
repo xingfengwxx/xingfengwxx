@@ -24,7 +24,8 @@ GRAPHQL_URL = "https://api.github.com/graphql"
 
 USERNAME = os.getenv("USERNAME", "xingfengwxx").strip()
 TOKEN = os.getenv("GH_TOKEN", "").strip() or os.getenv("GITHUB_TOKEN", "").strip()
-OUTPUT = os.getenv("OUTPUT", "profile-stats.svg").strip()
+DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), "profile-stats.svg")
+OUTPUT = os.getenv("OUTPUT", "").strip() or DEFAULT_OUTPUT
 
 
 class ApiError(RuntimeError):
@@ -263,15 +264,15 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
     height = 210
 
     row_svg = []
-    base_y = 66
-    row_h = 27
+    base_y = 68
+    row_h = 26
     for idx, (icon, label, value) in enumerate(rows):
         y = base_y + idx * row_h
         row_svg.append(
             f'''
       <text x="24" y="{y}" class="icon">{_svg_escape(icon)}</text>
       <text x="50" y="{y}" class="label">{_svg_escape(label)}</text>
-            <text x="210" y="{y}" class="value" text-anchor="end">{_svg_escape(value)}</text>
+      <text x="260" y="{y}" class="value" text-anchor="end">{_svg_escape(value)}</text>
 '''
         )
 
@@ -308,7 +309,7 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
   <circle cx="402" cy="98" r="48" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"/>
   <text x="402" y="108" text-anchor="middle" class="grade">{_svg_escape(grade)}</text>
 
-    <text x="24" y="198" class="meta">Updated: {_svg_escape(updated)}</text>
+    <text x="24" y="200" class="meta">Updated: {_svg_escape(updated)}</text>
 </svg>
 '''
 
