@@ -86,7 +86,8 @@ def _parse_next_link(link_header: str | None) -> str | None:
 
 def _humanize(n: int) -> str:
     if n >= 1_000_000:
-        return f"{n / 1_000_000:.1f}m".rstrip("0").rstrip(".") + "m"
+        text = f"{n / 1_000_000:.1f}".rstrip("0").rstrip(".")
+        return f"{text}m"
     if n >= 1_000:
         text = f"{n / 1_000:.1f}".rstrip("0").rstrip(".")
         return f"{text}k"
@@ -259,18 +260,18 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
     ]
 
     width = 495
-    height = 195
+    height = 210
 
     row_svg = []
-    base_y = 64
-    row_h = 29
+    base_y = 66
+    row_h = 27
     for idx, (icon, label, value) in enumerate(rows):
         y = base_y + idx * row_h
         row_svg.append(
             f'''
       <text x="24" y="{y}" class="icon">{_svg_escape(icon)}</text>
       <text x="50" y="{y}" class="label">{_svg_escape(label)}</text>
-      <text x="165" y="{y}" class="value">{_svg_escape(value)}</text>
+            <text x="210" y="{y}" class="value" text-anchor="end">{_svg_escape(value)}</text>
 '''
         )
 
@@ -298,7 +299,7 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
     </style>
   </defs>
 
-  <rect x="1" y="1" width="493" height="193" rx="12" fill="url(#bg)" stroke="#30363D"/>
+    <rect x="1" y="1" width="493" height="208" rx="12" fill="url(#bg)" stroke="#30363D"/>
   <text x="24" y="40" class="title">{_svg_escape(title)}</text>
 
   {''.join(row_svg)}
@@ -307,7 +308,7 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
   <circle cx="402" cy="98" r="48" fill="none" stroke="url(#ring)" stroke-width="8" stroke-linecap="round"/>
   <text x="402" y="108" text-anchor="middle" class="grade">{_svg_escape(grade)}</text>
 
-  <text x="24" y="182" class="meta">Updated: {_svg_escape(updated)}</text>
+    <text x="24" y="198" class="meta">Updated: {_svg_escape(updated)}</text>
 </svg>
 '''
 
