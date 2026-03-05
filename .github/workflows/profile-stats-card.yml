@@ -1,0 +1,57 @@
+name: Update Profile Stats Card
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build-stats-card:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate stats SVG
+        env:
+          USERNAME: xingfengwxx
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT: profile-stats.svg
+        run: |
+          python profile-stats/generate_profile_stats.py
+
+      - name: Publish to output branch
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin output:output || true
+
+          if git show-ref --verify --quiet refs/heads/output; then
+            git worktree add /tmp/output-branch output
+          else
+            git worktree add -b output /tmp/output-branch
+          fi
+
+          cp profile-stats.svg /tmp/output-branch/profile-stats.svg
+
+          cd /tmp/output-branch
+          git add profile-stats.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "chore: update profile stats card"
+          git push origin output
