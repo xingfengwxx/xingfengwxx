@@ -50,9 +50,8 @@
 ---
 
 ## 📊 GitHub 数据统计
-![GitHub Stats](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats-git-masterorgs-github-readme-stats-team.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=xingfengwxx&show_icons=true&theme=radical)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical)
 
 ---
 
