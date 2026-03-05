@@ -1,5 +1,5 @@
 <h1 align="center">你好 👋，我是王星星</h1>
-<h3 align="center">资深 Android 工程师｜11 年原生开发经验｜Kotlin · Jetpack Compose · MVVM · Clean Architecture</h3>
+<h3 align="center">资深 Android 工程师｜11 年原生开发经验｜Kotlin · Jetpack Compose · MVP · MVVM · MVI · Clean Architecture</h3>
 
 ---
 
@@ -7,7 +7,7 @@
 
 - 🎯 我是 **T 型技能人才**：以 Android 原生开发为“专”，同时持续拓展前端、小程序与后端能力，形成一专多能
 - 🔭 深耕 **Android 原生开发 11 年**，具备从 0 到 1 搭建到持续迭代优化的完整实战经验
-- 🧱 核心技术栈：**Kotlin / Jetpack Compose / MVVM / 协程 Flow / Hilt / Retrofit / Room**
+- 🧱 核心技术栈：**Kotlin / Jetpack Compose / MVVM / MVI / 协程 Flow / Hilt / Retrofit / Room**
 - 🚀 专注方向：**架构设计、组件化与多模块化、性能优化、工具类产品工程化落地**
 - 🤖 熟练掌握 **AI 工具协作开发**（如 GitHub Copilot / ChatGPT / Cursor / OpenClaw等），可用于需求拆解、代码生成、重构与效率优化
 - 🌱 拓展学习：自学过 **Vue3**、**微信小程序开发**，并系统学习过 **Java 后端 / Spring Boot / 服务端 API 设计**
@@ -19,7 +19,7 @@
 
 ## 🧠 Android 专业能力
 
-- **架构能力**：熟悉 MVVM、MVI、Clean Architecture，能够进行模块边界划分与可维护性设计
+- **架构能力**：熟悉 MVP、MVVM、MVI、Clean Architecture，能够进行模块边界划分与可维护性设计
 - **现代开发**：熟练使用 Jetpack Compose 构建复杂 UI，结合 StateFlow/SharedFlow 实现响应式状态管理
 - **工程能力**：具备组件化、多模块化实践经验，关注构建效率与团队协作可扩展性
 - **跨栈协同**：具备前端（Vue3）、小程序与后端基础认知，能够更高效地进行端到端协作与技术沟通
