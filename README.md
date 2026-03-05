@@ -1,15 +1,16 @@
 <h1 align="center">你好 👋，我是王星星</h1>
-<h3 align="center">资深 Android 工程师｜10 年原生开发经验｜Kotlin · Jetpack Compose · MVVM · Clean Architecture</h3>
+<h3 align="center">资深 Android 工程师｜11 年原生开发经验｜Kotlin · Jetpack Compose · MVVM · Clean Architecture</h3>
 
 ---
 
 ## 👨‍💻 关于我
 
-- 🔭 深耕 **Android 原生开发 10 年**，具备从 0 到 1 搭建到持续迭代优化的完整实战经验
+- 🎯 我是 **T 型技能人才**：以 Android 原生开发为“专”，同时持续拓展前端、小程序与后端能力，形成一专多能
+- 🔭 深耕 **Android 原生开发 11 年**，具备从 0 到 1 搭建到持续迭代优化的完整实战经验
 - 🧱 核心技术栈：**Kotlin / Jetpack Compose / MVVM / 协程 Flow / Hilt / Retrofit / Room**
 - 🚀 专注方向：**架构设计、组件化与多模块化、性能优化、工具类产品工程化落地**
 - 🤖 熟练掌握 **AI 工具协作开发**（如 GitHub Copilot / ChatGPT / Cursor / OpenClaw等），可用于需求拆解、代码生成、重构与效率优化
-- 🌱 正在学习：**Java 后端、Spring Boot、服务端 API 设计**
+- 🌱 拓展学习：自学过 **Vue3**、**微信小程序开发**，并系统学习过 **Java 后端 / Spring Boot / 服务端 API 设计**
 - 📱 计划上架多个 Google Play 工具类 App（AdMob 变现）
 - 💬 欢迎就 Android / Compose / Kotlin / 架构向我提问
 - 📫 联系我：**1099420259@qq.com**或**xingfengwxx@gmail.com**
@@ -21,6 +22,7 @@
 - **架构能力**：熟悉 MVVM、MVI、Clean Architecture，能够进行模块边界划分与可维护性设计
 - **现代开发**：熟练使用 Jetpack Compose 构建复杂 UI，结合 StateFlow/SharedFlow 实现响应式状态管理
 - **工程能力**：具备组件化、多模块化实践经验，关注构建效率与团队协作可扩展性
+- **跨栈协同**：具备前端（Vue3）、小程序与后端基础认知，能够更高效地进行端到端协作与技术沟通
 - **性能与体验**：关注启动速度、渲染性能、内存与稳定性优化，持续提升用户体验
 - **问题攻坚**：具备音视频、图像处理方向的项目经验，能够处理跨层级复杂技术问题
 
@@ -34,6 +36,8 @@
   <img src="https://img.shields.io/badge/Java-007396?logo=java&logoColor=white&style=flat"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=android&logoColor=white&style=flat"/>
   <img src="https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white&style=flat"/>
+  <img src="https://img.shields.io/badge/Vue3-4FC08D?logo=vuedotjs&logoColor=white&style=flat"/>
+  <img src="https://img.shields.io/badge/WeChat%20Mini%20Program-07C160?logo=wechat&logoColor=white&style=flat"/>
   <img src="https://img.shields.io/badge/Coroutines-0095D5?style=flat"/>
 </p>
 
