@@ -3,7 +3,7 @@ name: Update Profile Stats Card
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -23,11 +23,19 @@ jobs:
 
       - name: Generate stats SVG
         env:
-          USERNAME: xingfengwxx
+          GH_USERNAME: xingfengwxx
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT: profile-stats.svg
+          OUTPUT: profile-stats/profile-stats.svg
         run: |
           python profile-stats/generate_profile_stats.py
+
+      - name: Generate top languages SVG
+        env:
+          GH_USERNAME: xingfengwxx
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT: profile-stats/top-langs.svg
+        run: |
+          python profile-stats/generate_top_languages.py
 
       - name: Publish to output branch
         run: |
@@ -43,15 +51,16 @@ jobs:
             git worktree add -b output /tmp/output-branch
           fi
 
-          cp profile-stats.svg /tmp/output-branch/profile-stats.svg
+          cp profile-stats/profile-stats.svg /tmp/output-branch/profile-stats.svg
+          cp profile-stats/top-langs.svg /tmp/output-branch/top-langs.svg
 
           cd /tmp/output-branch
-          git add profile-stats.svg
+          git add profile-stats.svg top-langs.svg
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git commit -m "chore: update profile stats card"
+          git commit -m "chore: update profile stats cards"
           git push origin output

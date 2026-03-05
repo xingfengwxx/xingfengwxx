@@ -22,7 +22,11 @@ from typing import Any
 API_BASE = "https://api.github.com"
 GRAPHQL_URL = "https://api.github.com/graphql"
 
-USERNAME = os.getenv("USERNAME", "xingfengwxx").strip()
+USERNAME = (
+    os.getenv("GH_USERNAME", "").strip()
+    or os.getenv("GITHUB_USERNAME", "").strip()
+    or "xingfengwxx"
+)
 TOKEN = os.getenv("GH_TOKEN", "").strip() or os.getenv("GITHUB_TOKEN", "").strip()
 DEFAULT_OUTPUT = os.path.join(os.path.dirname(__file__), "profile-stats.svg")
 OUTPUT = os.getenv("OUTPUT", "").strip() or DEFAULT_OUTPUT
@@ -202,7 +206,7 @@ def _fetch_stats_graphql(username: str) -> dict[str, int]:
             break
         cursor = page_info.get("endCursor")
 
-    now = dt.datetime.utcnow()
+    now = dt.datetime.now(dt.UTC)
     one_year_ago = now - dt.timedelta(days=365)
 
     query_contrib = """
@@ -276,7 +280,7 @@ def build_svg(username: str, stars: int, commits: int, prs: int, issues: int, co
 '''
         )
 
-    updated = dt.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+    updated = dt.datetime.now(dt.UTC).strftime("%Y-%m-%d %H:%M UTC")
 
     return f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">{_svg_escape(title)}</title>

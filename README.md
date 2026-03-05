@@ -51,7 +51,7 @@
 
 ## 📊 GitHub 数据统计
 ![GitHub Stats](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/profile-stats.svg)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xingfengwxx&layout=compact&theme=radical&cache_seconds=1800)
+![Top Langs](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/top-langs.svg)
 
 ---
 
