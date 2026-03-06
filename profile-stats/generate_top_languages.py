@@ -33,19 +33,19 @@ class ApiError(RuntimeError):
     pass
 
 
-def _headers() -> dict[str, str]:
+def _headers(use_token: bool = True) -> dict[str, str]:
     h = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "top-languages-card-generator",
         "X-GitHub-Api-Version": "2022-11-28",
     }
-    if TOKEN:
+    if TOKEN and use_token:
         h["Authorization"] = f"Bearer {TOKEN}"
     return h
 
 
-def _request_json(url: str) -> tuple[Any, dict[str, str]]:
-    req = urllib.request.Request(url, headers=_headers())
+def _request_json(url: str, use_token: bool = True) -> tuple[Any, dict[str, str]]:
+    req = urllib.request.Request(url, headers=_headers(use_token=use_token))
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             body = resp.read().decode("utf-8", errors="replace")
@@ -78,41 +78,59 @@ def _svg_escape(text: str) -> str:
 
 
 def _fetch_repo_languages(username: str) -> dict[str, int]:
-    totals: dict[str, int] = {}
+    detailed_totals: dict[str, int] = {}
+    primary_totals: dict[str, int] = {}
 
-    url = f"{API_BASE}/users/{username}/repos?per_page=100&type=owner&sort=updated"
-    while url:
-        repos, headers = _request_json(url)
-        for repo in repos:
-            if repo.get("fork", False):
-                continue
-            if repo.get("archived", False):
-                continue
-
-            # Unauthenticated requests are rate-limited quickly; fallback to primary language.
-            if not TOKEN:
-                primary = (repo.get("language") or "").strip()
-                if primary:
-                    totals[primary] = totals.get(primary, 0) + 1
-                continue
-
-            lang_url = repo.get("languages_url")
-            if not lang_url:
-                continue
-
+    def _collect(use_token: bool) -> bool:
+        url = f"{API_BASE}/users/{username}/repos?per_page=100&type=owner&sort=updated"
+        while url:
             try:
-                langs, _ = _request_json(lang_url)
-                for name, size in langs.items():
-                    totals[name] = totals.get(name, 0) + int(size)
+                repos, headers = _request_json(url, use_token=use_token)
             except ApiError:
-                # Fallback to primary language when detailed language stats fail.
+                # If authenticated request fails at repo list level, caller can retry unauthenticated.
+                return False
+
+            for repo in repos:
+                if repo.get("fork", False):
+                    continue
+                if repo.get("archived", False):
+                    continue
+
                 primary = (repo.get("language") or "").strip()
                 if primary:
-                    totals[primary] = totals.get(primary, 0) + 1
+                    primary_totals[primary] = primary_totals.get(primary, 0) + 1
 
-        url = _parse_next_link(headers.get("link"))
+                # Detailed language byte stats are best-effort only.
+                if not (TOKEN and use_token):
+                    continue
 
-    return totals
+                lang_url = repo.get("languages_url")
+                if not lang_url:
+                    continue
+
+                try:
+                    langs, _ = _request_json(lang_url, use_token=True)
+                except ApiError:
+                    continue
+
+                for name, size in langs.items():
+                    detailed_totals[name] = detailed_totals.get(name, 0) + int(size)
+
+            url = _parse_next_link(headers.get("link"))
+
+        return True
+
+    # 1) Try authenticated mode first (better accuracy).
+    ok = _collect(use_token=True)
+
+    # 2) If authenticated repo listing failed, retry without token to avoid empty card.
+    if TOKEN and not ok:
+        _collect(use_token=False)
+
+    # Prefer detailed totals when available; otherwise fallback to primary-language counts.
+    if detailed_totals:
+        return detailed_totals
+    return primary_totals
 
 
 def build_svg(username: str, lang_totals: dict[str, int], top_n: int = 6) -> str:
