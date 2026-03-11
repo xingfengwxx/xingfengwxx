@@ -22,6 +22,18 @@ jobs:
           github_user_name: xingfengwxx
           outputs: dist/snake.svg
 
+      - name: Preserve stats cards in output branch
+        run: |
+          set -e
+          mkdir -p dist
+
+          git fetch origin output:output || true
+
+          if git show-ref --verify --quiet refs/heads/output; then
+            git show output:profile-stats.svg > dist/profile-stats.svg || rm -f dist/profile-stats.svg
+            git show output:top-langs.svg > dist/top-langs.svg || rm -f dist/top-langs.svg
+          fi
+
       - name: Push Snake to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
