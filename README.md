@@ -65,8 +65,8 @@
 ---
 
 ## 📊 GitHub 数据统计
-![GitHub Stats](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/profile-stats.svg)
-![Top Langs](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/top-langs.svg)
+![GitHub Stats](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/master/profile-stats/profile-stats.svg)
+![Top Langs](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/master/profile-stats/top-langs.svg)
 
 ---
 

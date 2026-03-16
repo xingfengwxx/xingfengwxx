@@ -37,25 +37,13 @@ jobs:
         run: |
           python profile-stats/generate_top_languages.py
 
-      - name: Publish to output branch
+      - name: Commit generated SVGs to default branch
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git fetch origin output:output || true
-
-          if git show-ref --verify --quiet refs/heads/output; then
-            git worktree add /tmp/output-branch output
-          else
-            git worktree add -b output /tmp/output-branch
-          fi
-
-          cp profile-stats/profile-stats.svg /tmp/output-branch/profile-stats.svg
-          cp profile-stats/top-langs.svg /tmp/output-branch/top-langs.svg
-
-          cd /tmp/output-branch
-          git add profile-stats.svg top-langs.svg
+          git add profile-stats/profile-stats.svg profile-stats/top-langs.svg
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
@@ -63,4 +51,4 @@ jobs:
           fi
 
           git commit -m "chore: update profile stats cards"
-          git push origin output
+          git push origin HEAD:${GITHUB_REF_NAME}

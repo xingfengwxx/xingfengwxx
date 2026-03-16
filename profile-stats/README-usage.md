@@ -19,17 +19,17 @@
   - Contributed to（近一年）
 - 统计仓库语言占比并生成 `top-langs.svg`
 - 生成 `profile-stats.svg`
-- 推送到 `output` 分支根目录
+- 提交并推送到默认分支的 `profile-stats/` 目录
 
 ## 3) README 引用方式
 
 在 GitHub Profile README 中添加：
 
-![GitHub Stats](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/profile-stats.svg)
-![Top Langs](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/output/top-langs.svg)
+![GitHub Stats](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/master/profile-stats/profile-stats.svg)
+![Top Langs](https://raw.githubusercontent.com/xingfengwxx/xingfengwxx/master/profile-stats/top-langs.svg)
 
 ## 4) 注意事项
 
 - 请确保该 workflow 放在 **个人主页仓库**：`xingfengwxx/xingfengwxx`
-- 默认分支若为 `master`，无需改动；workflow 会自动推送到 `output` 分支
+- 默认分支若为 `master`，无需改动；workflow 会自动提交到当前默认分支
 - 若想改用户名，修改 workflow 里 `GH_USERNAME` 环境变量
